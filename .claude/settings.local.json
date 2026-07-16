@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -g pixelWidth -g pixelHeight /private/tmp/claude-501/-Users-scholarsun-Documents-ScholarsCorner/6d9bb008-2f25-4a72-b4b9-de2aba9c19ed/scratchpad/icon1.png)",
+      "Bash(sips -z 96 96 /private/tmp/claude-501/-Users-scholarsun-Documents-ScholarsCorner/6d9bb008-2f25-4a72-b4b9-de2aba9c19ed/scratchpad/icon1.png --out /Users/scholarsun/Documents/ScholarsCorner/assets/images/favicon/favicon-96x96-dark.png)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/scholarsun/Documents/ScholarsCorner/assets/thumbnails/*.j* \"/Users/scholarsun/Documents/ScholarsCorner/assets/images/gallery/sunbeam-lake-loop/IMG_4641 \\(1\\).jpeg\")",
+      "Bash(python3 -)",
+      "Read(//Users/scholarsun/**)",
+      "Read(//Users/scholarsun/.ssh/**)",
+      "Bash(git config *)",
+      "Bash(ssh -T git@github.com -o StrictHostKeyChecking=accept-new -o ConnectTimeout=5)",
+      "Bash(bundle exec *)",
+      "Read(//opt/local/bin/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(gem list *)",
+      "Bash(gem env *)",
+      "Bash(ls ~/.rubies 2>/dev/null; ls /opt/local/share/chruby 2>/dev/null; grep -n \"chruby\\\\|ruby\" ~/.zshrc ~/.zprofile 2>/dev/null | head)",
+      "Read(//opt/local/share/**)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

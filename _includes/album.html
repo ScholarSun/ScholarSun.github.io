@@ -1,0 +1,25 @@
+<div id="{{include.albumname}}" class="album-gallery">
+    {%- for image in site.static_files -%}
+    {%- if image.path contains 'images/gallery' and image.path contains include.albumname -%}
+    {%- unless image.path contains 'thumbnails' -%}
+    <a href="{{ image.path }}" data-sub-html="{% exiftag image_description, , {{ image.path }} %}">
+        <img src="/thumbnails{{ image.path }}" />
+    </a>
+    {%- endunless -%}
+    {%- endif -%}
+    {%- endfor -%}
+</div>
+
+<script type="text/javascript">
+    lightGallery(document.getElementById("{{include.albumname}}"), {
+        mode: 'lg-fade',
+        speed: 500,
+        download: false,
+        counter: true,
+        thumbnail: true,
+        animateThumb: true,
+        showZoomInOutIcons: true,
+        allowMediaOverlap: true,
+        backdropDuration: 400
+    }); 
+</script>

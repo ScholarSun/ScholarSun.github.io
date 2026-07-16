@@ -1,0 +1,85 @@
+###########
+# site.title
+title: Scholar's Corner of the Internet
+description: Scholar Sun's Portfolio and Writings
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://scholarsun.github.io" # the base hostname & protocol for your site
+# host: 0.0.0.0
+port: 2000
+
+#########################
+# more settings
+
+plugins:
+  - jekyll
+  - jekyll-redirect-from
+  - webrick
+  - jekyll-seo-tag
+
+
+whitelist:
+  - jekyll-redirect-from
+
+markdown: kramdown
+
+compress_html:
+  clippings: all
+  comments: [""]
+  endings: [html, head, body, li, dt, dd, rt, rp, optgroup, option, colgroup, caption, thead, tbody, tfoot, tr, td, th]
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []
+
+# sass:
+#   sass_dir: css
+#   style:    compressed
+
+collections:
+  my_tags:
+    output: true
+    permalink: /tagged/:slug/
+  albums:
+    output: true
+defaults:
+  -
+    scope:
+      path: ""
+      type: my_tags
+    values:
+      layout: tagged
+
+permalink: /blog/:slug
+timezone: America/New_York
+future: false
+
+exclude:
+- README.md
+- LICENSE.md
+- vendor
+- node_modules
+- package.json
+- package-lock.json
+- Gemfile
+- Gemfile.lock
+
+Blog: /blog
+
+Gallery: /pics
+
+Work: /work
+
+mini_magick:
+    photoFolders:
+        source: assets/images/gallery
+        destination: thumbnails/assets/images/gallery
+        resize: "600x600^"
+        gravity: "center"
+        extent: "600x600"
+        quality: 90
+
+# Add links for more focus here
+# special_links:
+#   "Search": https://duckduckgo.com
+
+

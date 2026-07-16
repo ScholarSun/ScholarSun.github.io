@@ -1,0 +1,48 @@
+---
+layout: compress
+---
+
+{% include head.html %}
+
+    <main>
+        {% include header.html %}
+        <!-- {% for album in site.data.albums %}
+        <div class="album">
+          <a href="/albums/{{ album.title | slugify }}" class="album-link">
+            <img src="{{ album.thumbnail }}" alt="{{ album.title }} Thumbnail" class="album-thumbnail">
+            <p>{{ album.title }}</p>
+            <p>Published on {{ album.date }}</p>
+          </a>
+        </div>
+      {% endfor %} -->
+
+      {{ content }}
+
+      <ul class="blog-posts">
+          {% assign sorted_albums = site.albums | sort: 'date' | reverse %}
+          {% assign sorted_albums = sorted_albums | sort: 'end_date' | reverse %}
+          {% for album in sorted_albums %}
+          <li>
+              <div class="album-container">
+                  <img src="{{ album.thumbnail }}" alt="{{ album.title }} Thumbnail" class="album-cover">
+                  <div class="album-info">
+                      <a href="{{ site.baseurl }}{{ album.url }}">{{ album.title }}</a>
+                      <time datetime="{{ album.date }}">
+                          {% assign start_date = album.date | date: "%Y-%m-%d" %}
+                          {% assign end_date = album.end_date | date: "%Y-%m-%d" %}
+                          {% if start_date != end_date %}
+                              {{ album.date | date: "%b %-d, %Y" }} - {{ album.end_date | date: "%b %-d, %Y" }}
+                          {% else %}
+                              {{ album.date | date: "%b %-d, %Y" }}
+                          {% endif %}
+                      </time>
+                  </div>
+              </div>
+          </li>
+          {% endfor %}
+      </ul>
+    </main>
+
+    {% include footer.html %}
+</body>
+</html>

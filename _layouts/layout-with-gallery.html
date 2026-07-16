@@ -1,0 +1,40 @@
+---
+layout: compress
+---
+
+<!-- lightgallery Stuff -->
+<script src="/assets/vendor/lightgallery/lightgallery.umd.js"></script>
+<script src="/assets/vendor/lightgallery/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+<script src="/assets/vendor/lightgallery/plugins/zoom/lg-zoom.umd.js"></script>
+
+{% include head.html %}
+
+<main>
+
+    {% include header.html %}
+
+
+    <h3>{{ page.title }}</h3>
+    <i>
+        {% assign start_date = page.date | date: "%Y-%m-%d" %}
+        {% assign end_date = page.end_date | date: "%Y-%m-%d" %}
+        {% if start_date != end_date %}
+            {{ page.date | date: "%b %d, %Y" }} - {{ page.end_date | date: "%b %d, %Y" }}
+        {% else %}
+            {{ page.date | date: "%b %d, %Y" }}
+        {% endif %}
+    </i>
+    <h4 class="subtitle">{{ page.subtitle }}</h4>
+
+    {{ page.content }}
+
+    
+
+
+</main>
+
+{% include footer-post.html %}
+
+</body>
+
+</html>

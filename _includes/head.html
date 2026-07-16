@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+    <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" id="favicon-png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
+    <script>
+      (function () {
+        var mq = window.matchMedia("(prefers-color-scheme: dark)");
+        var png = document.getElementById("favicon-png");
+        function updateFavicon() {
+          png.href = mq.matches
+            ? "/assets/images/favicon/favicon-96x96-dark.png"
+            : "/assets/images/favicon/favicon-96x96.png";
+        }
+        updateFavicon();
+        mq.addEventListener("change", updateFavicon);
+      })();
+    </script>
+
+    <link href='{{ site.baseurl }}/feed.xml' rel='alternate' type='application/atom+xml'>
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+    <link type="text/css" rel="stylesheet" href="/assets/vendor/lightgallery/css/lightgallery-bundle.css" />
+</head>
+
+<body>

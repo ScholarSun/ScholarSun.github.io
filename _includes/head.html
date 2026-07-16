@@ -8,22 +8,27 @@
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
-    <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" id="favicon-png" />
-    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
     <script>
       (function () {
         var mq = window.matchMedia("(prefers-color-scheme: dark)");
-        var png = document.getElementById("favicon-png");
         function updateFavicon() {
-          png.href = mq.matches
+          var old = document.querySelectorAll('link[rel~="icon"]');
+          for (var i = 0; i < old.length; i++) { old[i].parentNode.removeChild(old[i]); }
+          var link = document.createElement("link");
+          link.rel = "icon";
+          link.type = "image/png";
+          link.setAttribute("sizes", "96x96");
+          link.href = mq.matches
             ? "/assets/images/favicon/favicon-96x96-dark.png"
             : "/assets/images/favicon/favicon-96x96.png";
+          document.head.appendChild(link);
         }
         updateFavicon();
-        mq.addEventListener("change", updateFavicon);
+        if (mq.addEventListener) { mq.addEventListener("change", updateFavicon); }
       })();
     </script>
 

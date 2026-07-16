@@ -8,8 +8,8 @@
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
-    <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png?v=2" sizes="96x96" />
+    <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico?v=2" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
     <script>
@@ -23,8 +23,8 @@
           link.type = "image/png";
           link.setAttribute("sizes", "96x96");
           link.href = mq.matches
-            ? "/assets/images/favicon/favicon-96x96-dark.png"
-            : "/assets/images/favicon/favicon-96x96.png";
+            ? "/assets/images/favicon/favicon-96x96-dark.png?v=2"
+            : "/assets/images/favicon/favicon-96x96.png?v=2";
           document.head.appendChild(link);
         }
         updateFavicon();

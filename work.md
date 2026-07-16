@@ -1,6 +1,7 @@
 ---
 layout: page
-title: 
+title: Work
+hide_title: true
 permalink: /work
 ---
 

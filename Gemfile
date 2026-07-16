@@ -23,7 +23,8 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
 end
 
-gem "mini_magick"
+# Pinned to 4.x: 5.x requires ImageMagick 7, but GitHub's Ubuntu runners ship ImageMagick 6
+gem "mini_magick", "~> 4.13"
 gem "exifr"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

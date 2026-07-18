@@ -5,8 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ page.title }} | {{ site.title }}</title>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.tab_title %}
+    <title>{{ page.tab_title }} | {{ site.title }}</title>
+    {% seo title=false %}
+    {% else %}
+    {% seo %}
+    {% endif %}
+    {% if page.url == "/" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Scholar Sun",
+      "url": "{{ site.url }}/",
+      "image": "{{ '/assets/images/profile.png' | absolute_url }}",
+      "email": "mailto:scholarsun99@gmail.com",
+      "jobTitle": "PhD Student in Operations Research",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Georgia Institute of Technology"
+      },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "University of British Columbia" },
+        { "@type": "CollegeOrUniversity", "name": "University of Waterloo" }
+      ],
+      "knowsAbout": ["Continuous optimization", "Derivative-free optimization", "Operations research"],
+      "sameAs": [
+        "https://github.com/scholarsun"
+      ]
+    }
+    </script>
+    {% endif %}
 
     <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png?v=2" sizes="96x96" />
     <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico?v=2" />
@@ -32,8 +61,7 @@
       })();
     </script>
 
-    <link href='{{ site.baseurl }}/feed.xml' rel='alternate' type='application/atom+xml'>
-    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    {% feed_meta %}
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
     <link type="text/css" rel="stylesheet" href="/assets/vendor/lightgallery/css/lightgallery-bundle.css" />
 </head>

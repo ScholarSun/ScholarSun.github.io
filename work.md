@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Work
+description: Publications and talks by Scholar Sun on derivative-free optimization, the cosine measure, and radiotherapy treatment planning.
 hide_title: true
 permalink: /work
 ---

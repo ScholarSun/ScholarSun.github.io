@@ -1,9 +1,20 @@
 ###########
 # site.title
 title: Scholar's Corner of the Internet
-description: Scholar Sun's Portfolio and Writings
+description: The personal website of Scholar Sun — PhD student in Operations Research at Georgia Tech. Research, publications, talks, and photography.
+author: Scholar Sun
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://scholarsun.github.io" # the base hostname & protocol for your site
+
+# Used by jekyll-seo-tag for Open Graph previews and JSON-LD
+logo: /assets/images/favicon/apple-touch-icon.png
+social:
+  name: Scholar Sun
+  links:
+    - https://github.com/scholarsun
+
+# Paste the token from Google Search Console (HTML tag method) to verify ownership:
+# google_site_verification: "your-token-here"
 # host: 0.0.0.0
 port: 2000
 
@@ -15,6 +26,7 @@ plugins:
   - jekyll-redirect-from
   - webrick
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 
 whitelist:

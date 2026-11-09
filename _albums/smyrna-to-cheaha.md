@@ -7,7 +7,7 @@ redirect_from:
   - /albums/chief-ladiga-to-cheaha
   - /albums/smyrna-ga-to-cheaha-al
 thumbnail: /assets/thumbnails/smyrna-to-cheaha-tn.jpg
-cover_position: center 62%
+cover_position: center 55%
 ---
 Silver Comet and Chief Ladiga Trails, Georgia and Alabama
 

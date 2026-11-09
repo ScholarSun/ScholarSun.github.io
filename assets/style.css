@@ -458,6 +458,7 @@ small a {
 
 /* Album Gallery List Styles */
 .album-container {
+    position: relative;
     width: 100%;
     margin-bottom: 2em;
     border-radius: 8px;
@@ -491,6 +492,16 @@ small a {
     color: #3273dc !important;
     text-decoration: none;
     font-size: 1em;
+}
+
+.album-info a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.album-container:hover .album-cover {
+    opacity: 0.9;
 }
 
 .album-info time {

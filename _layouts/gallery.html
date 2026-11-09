@@ -24,7 +24,7 @@ layout: compress
           {% for album in sorted_albums %}
           <li>
               <div class="album-container">
-                  <img src="{{ album.thumbnail }}" alt="{{ album.title }} Thumbnail" class="album-cover">
+                  <img src="{{ album.thumbnail }}" alt="{{ album.title }} Thumbnail" class="album-cover"{% if album.cover_position %} style="object-position: {{ album.cover_position }}"{% endif %}>
                   <div class="album-info">
                       <a href="{{ site.baseurl }}{{ album.url }}">{{ album.title }}</a>
                       <time datetime="{{ album.date }}">

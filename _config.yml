@@ -14,7 +14,7 @@ social:
     - https://github.com/scholarsun
 
 # Paste the token from Google Search Console (HTML tag method) to verify ownership:
-# google_site_verification: "your-token-here"
+google_site_verification: "HuB7-jfRn1GUV14yNDRhl27iyABDFTCdcSaQ2Ug3hCE"
 # host: 0.0.0.0
 port: 2000
 
